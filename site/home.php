@@ -3,7 +3,7 @@
 
     session_start();
 
-    if(isset($_SESSION['logado'])):
+    if(!isset($_SESSION['logado'])):
         header('Location: sistemalogin.php');
     endif;
 
@@ -19,7 +19,7 @@
         <meta charset='utf-8'>
     </head>
     <body>
-    <h1> Olá <?php $dados['nome'];?></h1>
+    <h1> Olá <?php echo $dados['nome'];?></h1>
     <a href="logout.php">Sáir</a>
     </body>
 </html>
