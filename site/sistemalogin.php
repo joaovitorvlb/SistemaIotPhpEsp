@@ -13,13 +13,14 @@
         else:
             $sql = "SELECT login FROM usuarios WHERE login = '$login'";
             $resultado = mysqli_query($conn, $sql);
-            
+
             if(mysqli_num_rows($resultado) > 0):
                 $senha = md5($senha);
                 $sql = "SELECT * FROM usuarios WHERE login = '$login' AND senha = '$senha'";
                 $resultado = mysqli_query($conn, $sql);
                 if(mysqli_num_rows($resultado) == 1):
                     $dados = mysqli_fetch_array($resultado);
+                    mysqli_close($conn);
                     $_SESSION['logado'] = true;
                     $_SESSION['id_usuario'] = $dados['id'];
                     header('location: home.php');
