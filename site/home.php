@@ -1,4 +1,9 @@
-<?php
-    session_start();
-    echo $_SESSION['cor']."<br>".$_SESSION['carro'];
-?>
+<html>
+    <head>
+        <title>Página restrita</title>
+        <meta charset='utf-8'>
+    </head>
+    <body>
+
+    </body>
+</html>
